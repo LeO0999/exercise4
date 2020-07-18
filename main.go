@@ -3,11 +3,14 @@ package main
 import (
 	"fmt"
 
+	"github.com/LeO0999/exercise4/database"
+
 	_ "github.com/rs/xid"
-	"/exercise4/database"
 )
 
-var db *Db = new(Db)
+var db *database.Db = new(database.Db)
+
+
 
 func main() {
 
@@ -27,16 +30,16 @@ func main() {
 	// }
 
 	// now := time.Now().UnixNano()
-	// user1 := User{"2", "Nguyen Van A", 10101998, now, now}
+	// user1 := database.User{"2", "Nguyen Van A", 10101998, now, now}
 	// err := db.InsertUser(user1)
 	// if err != nil {
 	// 	panic(err)
 	// }
 
-	// user2 := &User{}
+	// user2 := &database.User{}
 	// user2.Name = "Nguyen Thi B"
 
-	// condiuser := &User{ID: "1"}
+	// condiuser := &database.User{ID: "1"}
 
 	// err1 := db.UpdateUser(user2, condiuser)
 	// if err1 != nil {
@@ -50,14 +53,13 @@ func main() {
 		panic(err)
 	}
 	if len(list) > 0 {
-		for  _,va := range list {
+		for _, va := range list {
 			fmt.Println(va)
 		}
-		
+
 	} else {
 		fmt.Println("ko tim dc list user")
 	}
-	
 
 	//Get user by ID
 	// _, err := db.GetUser("1")

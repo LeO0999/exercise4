@@ -4,10 +4,11 @@ import (
 	"errors"
 )
 
+//point(user_id string, points int64, max_points int64)
 type Point struct {
-	UserID    string
-	Points    int64
-	MaxPoints int64
+	UserID    string `json: "user_id"`
+	Points    int64  `json: "points"`
+	MaxPoints int64  `json: "max_points"`
 }
 
 func (db *Db) InsertPoint(p Point) error {

@@ -7,12 +7,13 @@ import (
 	"time"
 )
 
+//user(id string, name string, birth int64, created int64, updated_at int64)
 type User struct {
-	ID       string
-	Name     string
-	Birth    int64
-	Created  int64
-	UpdateAt int64
+	ID       string `json: "id"`
+	Name     string `json: "name"`
+	Birth    int64  `json: "birth"`
+	Created  int64  `json: "created"`
+	UpdateAt int64  `json: "updated_at"`
 }
 type Data struct {
 	Iden int
